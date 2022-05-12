@@ -1,5 +1,6 @@
 :root {
   --blue: hsl(207, 61%, 30%);
+  --bg: linear-gradient(45deg, #0d324d,#0cbaba);
 }
 
 * {
@@ -12,19 +13,23 @@ body {
 }
 
 html {
-  background-color: var(--blue);
+  background-image: var(--bg)
 }
 
 .app-content{
- width: 450px;
+ width: 550px;
  margin: 0 auto;
  padding-top: 3rem;
- padding-bottom: 3rem;
 }
 
 .top-content > .title, .subtitle {
-  width: 450px;
+  width: 350px;
   text-align: center;
+}
+
+.top-content {
+  display: grid;
+  justify-content: center;
 }
 
 .center {
@@ -33,11 +38,45 @@ html {
   align-items: center;
 }
 
-.logo {
-  width: 100px;
-}
-
 .button {
   background-color: var(--blue);
   color: white;
+} 
+
+.modal-card-body > p {
+  text-align: center;
+  font-weight: 500;
+}
+
+.container {
+  border: 1px solid grey;
+  border-radius: 10px;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+.inner-container {
+  padding: 5px 5px 5px 5px;
+}
+.tags {
+  padding-top: 7px;
+}
+.select {
+  margin-top: -7px;
+  margin-right: 3px;
+}
+.footer, strong{
+  background-color: transparent;
+  color: white;
+}
+.semester-delete {
+  margin-top: 7px;
+}
+
+@media (max-width: 600px) {
+  .app-content {
+    width: 90%;
+  }
+  .top-content > .title, .subtitle {
+    width: 300px;
+  }
 }

@@ -1,6 +1,6 @@
-export const Row = ({ row, handleChange }) => {
+export const Semester = ({ semester, updateRows, deleteCourse }) => {
     return (
-        row.map((data, index) => {
+        semester.map((data, index) => {
             const { courseName, courseScore, courseUnits } = data;
                 return (
                 <tr key={index}>
@@ -11,7 +11,7 @@ export const Row = ({ row, handleChange }) => {
                                     type="text"
                                     name="courseName"
                                     value={courseName}
-                                    onChange={(e) => handleChange(index, e)} />
+                                    onChange={(e) => updateRows(index, e)} />
                                 <span className="icon is-small is-right">
                                     <i className="fa fa-pencil" aria-hidden="false"></i>
                                 </span>
@@ -25,7 +25,7 @@ export const Row = ({ row, handleChange }) => {
                                     type="number"
                                     name="courseScore"
                                     value={courseScore}
-                                    onChange={(e) => handleChange(index, e)} />
+                                    onChange={(e) => updateRows(index, e)} />
                                 <span className="icon is-small is-right">
                                     <i className="fa fa-pencil" aria-hidden="false"></i>
                                 </span>
@@ -39,12 +39,15 @@ export const Row = ({ row, handleChange }) => {
                                     type="number"
                                     name="courseUnits"
                                     value={courseUnits}
-                                    onChange={(e) => handleChange(index, e)} />
+                                    onChange={(e) => updateRows(index, e)} />
                                 <span className="icon is-small is-right">
                                     <i className="fa fa-pencil" aria-hidden="false"></i>
                                 </span>
                             </p>
                         </div>
+                    </td>
+                    <td>
+                    <button className="delete" onClick={() => deleteCourse(index)}></button>
                     </td>
                 </tr>
             )
