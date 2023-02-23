@@ -1,6 +1,6 @@
 :root {
   --blue: hsl(207, 61%, 30%);
-  --bg: linear-gradient(45deg, #0d324d,#0cbaba);
+  --bg: linear-gradient(45deg, #0d324d, #0cbaba);
 }
 
 * {
@@ -8,75 +8,40 @@
   padding: 0;
 }
 
+html,
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: var(--bg);
+  width: 100vw;
+  height: max-content;
 }
 
-html {
-  background-image: var(--bg)
+.App {
+  height: 100vh;
 }
 
-.app-content{
- width: 550px;
- margin: 0 auto;
- padding-top: 3rem;
+.title {
+  width: 500px;
 }
 
-.top-content > .title, .subtitle {
-  width: 350px;
-  text-align: center;
+.calc-card {
+  width: 80%;
+  max-width: 600px;
 }
 
-.top-content {
-  display: grid;
-  justify-content: center;
-}
-
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.button {
-  background-color: var(--blue);
-  color: white;
-} 
-
-.modal-card-body > p {
-  text-align: center;
-  font-weight: 500;
-}
-
-.container {
-  border: 1px solid grey;
-  border-radius: 10px;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-}
-.inner-container {
-  padding: 5px 5px 5px 5px;
-}
-.tags {
-  padding-top: 7px;
-}
-.select {
-  margin-top: -7px;
-  margin-right: 3px;
-}
-.footer, strong{
-  background-color: transparent;
-  color: white;
-}
-.semester-delete {
-  margin-top: 7px;
-}
-
-@media (max-width: 600px) {
-  .app-content {
-    width: 90%;
+@media (max-width: 500px) {
+  .desktop-table {
+    display: none;
   }
-  .top-content > .title, .subtitle {
-    width: 300px;
+}
+
+@media (min-width: 500px) {
+  .mobile-table {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .header-fs {
+    font-size: large;
   }
 }
